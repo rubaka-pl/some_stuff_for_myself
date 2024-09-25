@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Page</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body::after {
+      background: url(img/download__backgroung.webp) no-repeat;
+      background-size: cover !important;
+      content: "";
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    h2 {
+      padding: 20px;
+    }
+
+    p {
+      padding: 25px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 10%;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.747);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 1000px;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <header>
+    <a href="index.html" class="logo"><i class="fas fa-infinity"></i>Anime.</a>
+    <nav class="navbar">
+      <a class="active" href="index.html">home</a>
+      <a href="index.html">anime</a>
+      <a href="index.html">action</a>
+      <a href="index.html">child</a>
+      <a href="index.html">family</a>
+    </nav>
+    <div class="icons">
+      <i class="fas fa-bars" id="menu-bars"></i>
+      <i class="fas fa-search" id="search-icon"></i>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </header>
+
+
+
+  <div class="video-container container">
+
+    <iframe style="padding-top: 100px;" src="https://www.youtube.com/embed/9O3Rgriketo?autoplay=1"
+      title="Dungeon meshi. Trailer" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+
+  </div>
+
+
+  <div class="about container">
+    <h2 style="text-transform: uppercase;">About Dungeon Meshi</h2>
+    <p style="padding: 5px 20px;">After the Golden Kingdom is sunk underground by an insane magician, its king emerges,
+      promising all of his treasure to any who defeat the magician, before crumbling to dust. Guilds are spurred on by
+      this promise, traversing the labyrinthine dungeon in search of the magician. Laios, the leader of one such guild,
+      encounters a dragon that wipes out his party and devours his sister Falin. Despite having lost the entirety of
+      their supplies and belongings, Laios along with Marcille, an elven healer, and Chilchuck, a halfling thief,
+      immediately reenter the dungeon, determined to save Falin.
+
+      Time being of the essence, Laios suggests the taboo of eating the monsters of the dungeon as a means of gathering
+      supplies. Upon the preparation of their first meal in the dungeon, they are stopped by an onlooking dwarf named
+      Senshi. An enthusiast of monster cooking, he helps them prepare their monster ingredients for safe consumption.
+      After learning of Laios' circumstances, Senshi expresses his desire to cook a dragon and joins their guild, thus
+      beginning their food-filled foray into the dungeon together.
+    </p>
+  </div>
+
+
+
+  <div class="screenshots container">
+    <h2>Screenshots</h2>
+    <div class="screenshots-content">
+      <img decoding="async" src="img/screenshot-img-1.jpeg" alt="">
+      <img decoding="async" src="img/screenshot-img-2.jpeg" alt="">
+      <img decoding="async" src="img/screenshot-img-3.jpeg" alt="">
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <div class="download">
+    <h2>Download links</h2>
+    <div class="downlod-links">
+      <a href="https://nyaa.land/?f=0&c=0_0&q=dungeon+meshi">For Android</a>
+      <a href="https://nyaa.land/?f=0&c=0_0&q=dungeon+meshi">For IOS</a>
+      <a href="https://nyaa.land/?f=0&c=0_0&q=dungeon+meshi">For Windows</a>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="copyright container">
+      <a href="#" class="logo"><i class="fas fa-infinity"></i>Anime.</a>
+      <p>&#169; rubaka-pl</p>
+    </div>
+  </footer>
+
+
+  <script>const images = document.querySelectorAll('.screenshots-content img');
+    const modal = document.getElementById('myModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.querySelector('.close');
+
+    // Функция для открытия модального окна с изображением
+    function openModal(imgSrc) {
+      modal.style.display = 'block'; // Показываем модальное окно
+      modalImg.src = imgSrc; // Устанавливаем src изображения в модальное окно
+    }
+
+    // Функция для закрытия модального окна
+    function closeModal() {
+      modal.style.display = 'none'; // Скрываем модальное окно
+    }
+
+    // Добавляем обработчик события клика на каждое изображение
+    images.forEach(image => {
+      image.addEventListener('click', function () {
+        openModal(this.src); // При клике на изображение открываем модальное окно с его src
+      });
+    });
+
+    // Добавляем обработчик события клика на кнопку "Закрыть" модальное окно
+    closeBtn.addEventListener('click', closeModal);
+
+    // Добавляем обработчик события клика на область вне модального окна для закрытия модального окна
+    window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });</script>
+</body>
