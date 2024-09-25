@@ -1,0 +1,223 @@
+body {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "Prompt", serif;
+}
+
+.menu {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    padding: 60px 0;
+}
+
+.menu_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 61px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 120px;
+    font-weight: 400;
+}
+.text {
+    font-size: 24px;
+}
+.top__text {
+    font-family: "Gravitas One", serif;
+    z-index: 1;
+    animation-name: text;
+    opacity: 0;
+    animation-timeline: scroll();
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-range: 150 300vh;
+}
+@keyframes text {
+    to {
+        opacity: 1;
+    }
+}
+.top__layer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* for mozilla */
+@supports (animation-timeline: scroll()) {
+    .top {
+        height: 500vh;
+    }
+    .top__layer {
+        animation-timing-function: linear;
+        animation-timeline: scroll();
+        animation-fill-mode: both;
+        animation-range: 0 500vh;
+    }
+}
+.top__layer--1 {
+    animation-name: top-layer-1;
+}
+
+@keyframes top__layer-1 {
+    to {
+        scale: 4;
+    }
+}
+
+.top__layer--2 {
+    animation-name: top-layer-2;
+}
+@keyframes top-layer-2 {
+    to {
+        scale: 2;
+    }
+}
+
+.top__layer--3 {
+    animation-name: top-layer-3;
+}
+@keyframes top-layer-3 {
+    to {
+        scale: 1.5;
+    }
+}
+
+.top__layer--4 {
+    animation-name: top-layer-4;
+}
+
+@keyframes top-layer-4 {
+    to {
+        scale: 1.35;
+    }
+}
+
+.top__layer--5 {
+    animation-name: top-layer-5;
+}
+
+@keyframes top-layer-5 {
+    to {
+        scale: 1.25;
+    }
+}
+
+.arrows-box {
+    border: 1px solid #fff;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+.arrows {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    margin: 23px auto 0;
+}
+.arrows::after,
+.arrows::before {
+    content: "";
+    position: absolute;
+    margin: 0 auto;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    width: 100%;
+    height: 100%;
+    animation: arrow 3s linear infinite;
+}
+.arrows::after {
+    animation: arrow 3s linear infinite -1.5s;
+}
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: translate(0, -10px) rotate(-45deg);
+    }
+    10%,
+    90% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0px) rotate(-45deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0, 10px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 960px) {
+    .title {
+        font-size: 80px;
+    }
+    .text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 960px) {
+    .title {
+        font-size: 80px;
+    }
+    .text {
+        font-size: 20px;
+    }
+}
+@media (max-width: 670px) {
+    .title {
+        font-size: 60px;
+    }
+    .text {
+        font-size: 17px;
+    }
+    .menu_list {
+        gap: 45px;
+    }
+}
+@media (max-width: 520px) {
+    .title {
+        font-size: 40px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .menu_list {
+        gap: 25px;
+    }
+}
+@media (max-width: 350px) {
+    .title {
+        font-size: 35px;
+    }
+    .text {
+        font-size: 13px;
+    }
+    .menu_list {
+        gap: 16px;
+    }
+}
